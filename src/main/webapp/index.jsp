@@ -11,17 +11,13 @@
 <%@include file="top.jsp"%>
 
 
+<table align="center" cellspacing="0" cellpadding="0" width="1000">
+    <tr>
+        <td width="320"><input id='tags' class="input-block-level" placeholder="姓名" title="姓名" style="width:300px;height: 30px;"></td>
+        <td valign="top"><button class="ui-button-primary" id='searchBtn' style="width:80px;height: 30px;">搜索</button></td>
+    </tr>
+</table>
     <table align="center" cellspacing="0" cellpadding="0" width="1000">
-        <tr>
-            <td colspan="2">
-                <table width="1000">
-                    <tr>
-                        <td style="width:300px;"><input id='tags' class="input-block-level" placeholder="姓名" title="姓名"></td>
-                        <td valign="top"><button class="ui-button-primary" id='searchBtn'>搜索</button></td>
-                    </tr>
-                </table>
-            </td>
-        </tr>
         <tr>
             <td valign="top">
                 <table id="classGrid"></table>
@@ -35,7 +31,7 @@
             <td colspan="2">
                 <textarea  id="msgText" rows="3" maxlength="60" class="input-block-level" title="消息内容(最多60字符)" placeholder="消息内容(最多60字符)" style="width: 1004px"></textarea>
                 <div align="right">
-                    <button class="ui-button-primary" id="clearBtn">清空内容</button>
+                    <button class="ui-button-default" id="clearBtn">清空内容</button>
                     <button class="ui-button-primary" id="sendBtn">发送消息</button>
                 </div>
             </td>
@@ -118,11 +114,11 @@
         jQuery("#sendBtn").click( function() {
             var ids = jQuery("#addrGrid").jqGrid('getGridParam','selarrrow');
             if(ids==""){
-                alert("还未选择人员");
+                f_alert("还未选择人员");
                 return false;
             }
             if($.trim($("#msgText").val())==""){
-                alert("消息内容不能为空！");
+                f_alert("消息内容不能为空！");
                 return false;
             }
 
@@ -136,7 +132,7 @@
             }
             var msg= $("#msgText").val();
             $GGS.ajax("AddrAction!sendMsg.action",{ids:s,msg:msg});
-            alert("发送完成！");
+            f_alert("发送完成！");
         });
 
         $("#clearBtn").click(function(){

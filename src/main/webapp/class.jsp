@@ -79,7 +79,7 @@
                 "保存": function () {
                     var cname = $("#cname").val();
                     if($.trim(cname)==""){
-                        alert("分组名称不能为空！");
+                        f_alert("分组名称不能为空！");
                         return false;
                    }
                     $GGS.ajax("AddrClassAction!save.action",{
@@ -106,7 +106,7 @@
     $("#modifyClassBtn").click(function(){
         var id = jQuery("#classGrid").jqGrid('getGridParam','selrow');
         if(!id){
-            alert("还未选择记录");
+            f_alert("还未选择记录");
             return false;
         }
         var data = $("#classGrid").jqGrid('getRowData',id);
@@ -118,13 +118,14 @@
     $("#delClassBtn").click(function(){
         var id = jQuery("#classGrid").jqGrid('getGridParam','selrow');
         if(!id){
-            alert("还未选择记录");
+            f_alert("还未选择记录");
             return false;
         }
-        if(confirm("是否确认要删除？")){
+        f_confirm("是否确认要删除？",function(){
             $GGS.ajax("AddrClassAction!del.action",{id:id});
             f_reload();
-        }
+        });
+
     });
 
 

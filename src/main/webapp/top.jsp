@@ -9,45 +9,7 @@
 <html>
 <head>
     <title><%=CommConst.SOFT_NAME%></title>
-
-
-    <!-- Le styles -->
-    <link href="res/assets/css/bootstrap.min.css" rel="stylesheet">
-    <link type="text/css" href="res/css/custom-theme/jquery-ui-1.10.0.custom.css" rel="stylesheet" />
-    <link type="text/css" href="res/assets/css/font-awesome.min.css" rel="stylesheet" />
-
-    <link href="res/assets/css/docs.css" rel="stylesheet">
-    <link href="res/assets/js/google-code-prettify/prettify.css" rel="stylesheet">
-
-    <!--begin wijmo menu-->
-    <link href="res/third-party/wijmo/jquery.wijmo-open.1.5.0.css" rel="stylesheet" type="text/css" />
-    <!--End wijmo menu-->
-
-    <!-- jqGrid-->
-    <link rel="stylesheet" href="res/third-party/jqGrid/jqGrid/css/ui.jqgrid.css" />
-    <link rel="stylesheet" href="res/third-party/jqGrid/jqGrid.overrides.css">
-
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="res/assets/ico/apple-touch-icon-144-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="res/assets/ico/apple-touch-icon-114-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="res/assets/ico/apple-touch-icon-72-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" href="res/assets/ico/apple-touch-icon-57-precomposed.png">
-    <link rel="shortcut icon" href="images/logo.jpg">
-
-    <script src="res/assets/js/jquery-1.9.0.min.js" type="text/javascript"></script>
-    <script src="res/assets/js/bootstrap.min.js" type="text/javascript"></script>
-    <script src="res/assets/js/jquery-ui-1.10.0.custom.min.js" type="text/javascript"></script>
-    <script src="res/assets/js/google-code-prettify/prettify.js" type="text/javascript"></script>
-    <script src="res/assets/js/docs.js" type="text/javascript"></script>
-    <!--wijmo-->
-    <script src="res/third-party/wijmo/jquery.mousewheel.min.js" type="text/javascript"></script>
-    <script src="res/third-party/wijmo/jquery.wijmo-open.1.5.0.min.js" type="text/javascript"></script>
-    <!--End wijmo-->
-    <!--jqGrid-->
-    <script src="res/third-party/jqGrid/jqGrid/js/i18n/grid.locale-cn.js"></script>
-    <script src="res/third-party/jqGrid/jqGrid/js/jquery.jqGrid.min.js"></script>
-
-    <script src="res/ggs.js"></script>
-
+    <%@include file="inc.jsp"%>
 
 </head>
 
@@ -82,11 +44,13 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="logout.jsp" onclick="return confirm('是否确认退出<%=CommConst.SOFT_NAME%>？');">退出</a>
+                        <a href="#" onclick="f_exit();">退出</a>
                     </li>
                 </ul>
             </div>
         </div>
     </div>
 </div>
-<br/>
+<div style="height: 5px;"></div>
+
+
