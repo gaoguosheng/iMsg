@@ -1,7 +1,8 @@
 package com.ggs.imsg.bean;
 
+import org.ggs.orm.annotation.NotColumn;
+
 import java.util.List;
-import org.ggs.orm.annotation.*;
 
 /**
  * Created with IntegerelliJ IDEA.

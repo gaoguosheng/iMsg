@@ -2,7 +2,6 @@ package com.ggs.imsg.bean;
 
 import org.ggs.orm.annotation.PK;
 import org.ggs.orm.annotation.PKType;
-
 import org.ggs.orm.annotation.Table;
 
 

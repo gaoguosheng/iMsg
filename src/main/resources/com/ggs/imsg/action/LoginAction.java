@@ -6,7 +6,6 @@ import com.ggs.imsg.comm.CommUtil;
 import com.ggs.imsg.util.MD5;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import org.ggs.orm.ORMUtil;
 import org.ggs.web.BaseAction;
 import org.ggs.web.annotation.Action;
 

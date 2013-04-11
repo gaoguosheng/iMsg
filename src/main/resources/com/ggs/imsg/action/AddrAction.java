@@ -10,7 +10,7 @@ import com.ggs.imsg.util.NullUtil;
 import com.ggs.imsg.util.PinYinUtil;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.ykesoft.service.MsgClient;
+import com.ykesoft.service.GSMClient;
 import org.ggs.web.BaseAction;
 import org.ggs.web.annotation.Action;
 
@@ -109,7 +109,7 @@ public class AddrAction extends BaseAction{
         for(Map<String,String>item:itemList){
             AddrLog log  = new AddrLog();
             String content=item.get("cname")+"，您好！"+msg;
-            int status = MsgClient.sendMsg(item.get("mobile"), content);
+            int status = GSMClient.sendMsg(item.get("mobile"), content);
             log.setStatus(status);
             log.setContent(content);
             log.setDatetime(DateUtil.getCurrDatetime());
