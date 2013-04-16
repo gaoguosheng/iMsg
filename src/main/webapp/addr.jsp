@@ -33,7 +33,7 @@
     var myHeight = screen.availHeight-360;
 
     $("#addrGrid").jqGrid({
-        url: "!addrList.action",
+        url: "AddrAction!addrList.action",
         datatype: "json",
         mtype:"POST",//提交方式
         width:1000,

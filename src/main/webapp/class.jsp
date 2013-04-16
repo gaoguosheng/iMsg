@@ -32,7 +32,7 @@
 
 
     $("#classGrid").jqGrid({
-        url: "!classList.action",
+        url: "AddrAction!classList.action",
         datatype: "json",
         mtype:"POST",//提交方式
         width:1000,
