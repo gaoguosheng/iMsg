@@ -29,16 +29,15 @@
         </tr>
         <tr>
             <td colspan="2">
+                <div id="loaderDiv" align="center" style="display: none;"><img src="images/ajax-loader-6.gif"></div>
                 <textarea  id="msgText" rows="3" maxlength="60" class="input-block-level" title="消息内容(最多60字符)" placeholder="消息内容(最多60字符)" style="width: 1004px"></textarea>
-                <div align="right">
+                <div align="right" id="buttonsDiv">
                     <button class="ui-button-default" id="clearBtn">清空内容</button>
                     <button class="ui-button-primary" id="sendBtn">发送消息</button>
                 </div>
             </td>
         </tr>
     </table>
-
-
     <script type="text/javascript">
         var myHeight = screen.availHeight-420;
 
@@ -131,8 +130,14 @@
                 }
             }
             var msg= $("#msgText").val();
-            $GGS.ajax("AddrAction!sendMsg.action",{ids:s,msg:msg});
-            f_alert("发送完成！");
+            $("#loaderDiv").show();
+            $("#buttonsDiv").hide();
+            $GGS.ajaxAsync("AddrAction!sendMsg.action",{ids:s,msg:msg},function(){
+                $("#loaderDiv").hide();
+                $("#buttonsDiv").show();
+                f_alert("发送完成！");
+            });
+
         });
 
         $("#clearBtn").click(function(){
@@ -168,6 +173,8 @@
                 f_search();
             }
         });
+
+
 
     </script>
 <%@include file="bottom.jsp"%>

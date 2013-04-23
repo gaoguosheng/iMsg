@@ -13,6 +13,20 @@ var $GGS={
         });
         return result;
     } ,
+    ajaxAsync:function(url,data,fun){
+        var result;
+        $.ajax({
+            type: "POST",
+            url:url,
+            data:data,
+            async:true,
+            success: function(msg){
+                result=msg;
+                fun();
+            }
+        });
+        return result;
+    } ,
 
     //获取JSON(同步)
     getJSON:function(url,data){
