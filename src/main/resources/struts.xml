@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<!-- 动态方法 -->
+	<constant name="struts.enable.DynamicMethodInvocation" value="true" />
+	<!-- 开发模式 -->
+	<constant name="struts.devMode" value="true" />
+	<!-- 设置action扩展名 -->
+	<constant name="struts.action.extension" value="action" />
+	<!-- 基包，所有包继承基包 -->
+	<package name="basePackage" extends="struts-default" abstract="true">
+	</package>
+
+    <!--Action-->
+	<package name="default" namespace="/" extends="basePackage">
+        <action name="LoginAction" class="com.ggs.imsg.action.LoginAction"></action>
+        <action name="AddrAction" class="com.ggs.imsg.action.AddrAction"></action>
+        <action name="AddrClassAction" class="com.ggs.imsg.action.AddrClassAction"></action>
+	</package>
+
+</struts>    

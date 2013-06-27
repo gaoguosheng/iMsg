@@ -6,8 +6,7 @@ import com.ggs.imsg.comm.CommUtil;
 import com.ggs.imsg.util.MD5;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import org.ggs.web.BaseAction;
-import org.ggs.web.annotation.Action;
+import com.opensymphony.xwork2.ModelDriven;
 
 import java.util.Map;
 
@@ -18,12 +17,12 @@ import java.util.Map;
  * Time: 下午4:34
  * To change this template use File | Settings | File Templates.
  */
-@Action
-public class LoginAction extends BaseAction {
+
+public class LoginAction extends BaseAction implements ModelDriven<User>{
     private Gson gson = new GsonBuilder().create();
     private User model = new User();
     @Override
-    public Object getModel() {
+    public User getModel() {
         return model;
     }
 

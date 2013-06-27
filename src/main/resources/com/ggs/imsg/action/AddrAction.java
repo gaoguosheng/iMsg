@@ -10,9 +10,8 @@ import com.ggs.imsg.util.NullUtil;
 import com.ggs.imsg.util.PinYinUtil;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.opensymphony.xwork2.ModelDriven;
 import com.ykesoft.service.GSMClient;
-import org.ggs.web.BaseAction;
-import org.ggs.web.annotation.Action;
 
 import java.util.List;
 import java.util.Map;
@@ -24,12 +23,12 @@ import java.util.Map;
  * Time: 下午9:30
  * To change this template use File | Settings | File Templates.
  */
-@Action
-public class AddrAction extends BaseAction{
+
+public class AddrAction extends BaseAction implements ModelDriven<Addr>{
     private Addr model = new Addr();
 
     @Override
-    public Object getModel() {
+    public Addr getModel() {
         return model;
     }
 

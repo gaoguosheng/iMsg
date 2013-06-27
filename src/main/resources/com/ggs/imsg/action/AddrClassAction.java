@@ -4,8 +4,7 @@ import com.ggs.imsg.bean.AddrClass;
 import com.ggs.imsg.bean.User;
 import com.ggs.imsg.comm.CommUtil;
 import com.ggs.imsg.util.NullUtil;
-import org.ggs.web.BaseAction;
-import org.ggs.web.annotation.Action;
+import com.opensymphony.xwork2.ModelDriven;
 
 /**
  * Created with IntelliJ IDEA.
@@ -14,12 +13,12 @@ import org.ggs.web.annotation.Action;
  * Time: 下午8:31
  * To change this template use File | Settings | File Templates.
  */
-@Action
-public class AddrClassAction extends BaseAction {
+
+public class AddrClassAction extends BaseAction implements ModelDriven<AddrClass> {
     private AddrClass model = new AddrClass();
 
     @Override
-    public Object getModel() {
+    public AddrClass getModel() {
         return model;
     }
 

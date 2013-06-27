@@ -4,16 +4,14 @@
          version="2.4">
 
   <display-name>Archetype Created Web Application</display-name>
-    <servlet>
-        <servlet-name>BaseServlet</servlet-name>
-        <servlet-class>org.ggs.web.BaseServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>BaseServlet</servlet-name>
-        <url-pattern>*.action</url-pattern>
-    </servlet-mapping>
-
-
+    <filter>
+        <filter-name>struts2</filter-name>
+        <filter-class>org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>struts2</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
     <welcome-file-list>
         <welcome-file>index.jsp</welcome-file>
     </welcome-file-list>
